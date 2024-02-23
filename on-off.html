@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="bootstrap.min.css">
+    <style>
+        .bttn-box{
+            width: 100%;
+            height: 100px;
+            display: flex;
+            justify-content: center;
+        }
+        .blubs{
+            display: flex;
+            justify-content: center;
+        }
+        .blub-1{
+            margin-right: 40px;
+        }
+        #off{
+            padding-top: 7px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="my-5">
+            <div class="bttn-box position-relative">
+                <div class="bttn position-absolute top-0 left-0 " id="off"><img src="img/btnoff.jpg"  width="200px" alt=""></div>
+                <div class="bttn position-absolute top-0 left-0" id="on"><img src="img/btnon.jpg" width="200px" alt=""></div>
+            </div>
+            <div class="blubs position-relative">
+                <div class="blub-2 position-absolute top-0 left-0 " id="b-on"><img src="img/onblub.jpg" alt=""></div>
+                <div class="blub-1 position-absolute top-0 left-0" id="b-off"><img src="img/offblub.jpg" alt=""></div>
+            </div>
+        </div>
+    </div>
+    <script src="../../jquery files/jquery-3.7.1.min.js"></script>
+    <script>
+        $("#off").click(
+            function(){
+                    $(".blub-2").css(
+                        {
+                            'display':'none'
+                        }
+                    )
+                    $(".blub-1").css(
+                        {
+                            'display':'block'
+                        }
+                    )
+                    $("#off").css(
+                        {
+                            'display' : 'none'
+                        }
+                    )
+                    $("#on").css(
+                        {
+                            'display' : 'block'
+                        }
+                    )
+            }
+        )
+        $("#on").click(
+            function(){
+                    $(".blub-2").css(
+                        {
+                            'display':'block'
+                        }
+                    )
+                    $(".blub-1").css(
+                        {
+                            'display':'none'
+                        }
+                    )
+                    $("#off").css(
+                        {
+                            'display' : 'block'
+                        }
+                    )
+                    $("#on").css(
+                        {
+                            'display' : 'none'
+                        }
+                    )
+            }
+        )
+    </script>
+</body>
+</html>

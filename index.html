@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Slide up</title>
+    <link rel="stylesheet" href="bootstrap.min.css">
+    <style>
+        .main{
+            max-width: 600px;
+            height: auto;
+            margin: auto;
+        }
+        .box{
+            display: none;
+            padding: 10px;
+        }
+        .slider h1:hover{
+            color: blue;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="main my-3 border border-danger">
+            <div class="slider">
+                <h1 class="border border-light bg-light p-2 sliding">Course 1</h1>
+                <div class="box" style="display: block;">
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Autem esse repellat, perspiciatis fugiat amet suscipit molestias quia, voluptatum cumque accusamus libero nemo repudiandae illo ea iste, a ad velit voluptatibus.
+                </div>
+            </div>
+            <div class="slider">
+                <h1 class="border border-light bg-light p-2 sliding">Course 2</h1>
+                <div class="box">
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Autem esse repellat, perspiciatis fugiat amet suscipit molestias quia, voluptatum cumque accusamus libero nemo repudiandae illo ea iste, a ad velit voluptatibus.
+                </div>
+            </div>
+            <div class="slider">
+                <h1 class="border border-light bg-light p-2 sliding">Course 3</h1>
+                <div class="box">
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Autem esse repellat, perspiciatis fugiat amet suscipit molestias quia, voluptatum cumque accusamus libero nemo repudiandae illo ea iste, a ad velit voluptatibus.
+                </div>
+            </div>
+            <div class="slider">
+                <h1 class="border border-light bg-light p-2 sliding">Course 4</h1>
+                <div class="box">
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Autem esse repellat, perspiciatis fugiat amet suscipit molestias quia, voluptatum cumque accusamus libero nemo repudiandae illo ea iste, a ad velit voluptatibus.
+                </div>
+            </div>
+            <div class="slider">
+                <h1 class="border border-light bg-light p-2 sliding">Course 5</h1>
+                <div class="box">
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Autem esse repellat, perspiciatis fugiat amet suscipit molestias quia, voluptatum cumque accusamus libero nemo repudiandae illo ea iste, a ad velit voluptatibus.
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+<script src="../../jquery files/jquery-3.7.1.min.js"></script>
+    <script>
+        $(".sliding").click(
+            function(){
+                $(".box").slideUp(500);
+                $(this).next(".box").slideToggle(500);
+            }
+        )
+    </script>
+</html>

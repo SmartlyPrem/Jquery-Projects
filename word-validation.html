@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="bootstrap.min.css">
+</head>
+<body>
+    <div class="container mt-5">
+        <h3 class="text-center">
+            <b>WsCube Tech </b>Blog Post
+        </h3>
+        <div class="card p-3">
+            <div class="col-md-12">
+                <div class="mb-3">
+                    <span class="total-char"> (None: Upto 300 characters only)</span>
+                    <textarea class="form-control mt-2 count-me" maxlength="300" rows="5"></textarea>
+                </div>
+                <div class="mb-3">
+                    <span class="total-char"> (None: Upto 300 characters only)</span>
+                    <textarea class="form-control mt-2 count-me" maxlength="300" rows="5"></textarea>
+                </div>
+                <div class="mb-3">
+                    <span class="total-char"> (None: Upto 300 characters only)</span>
+                    <textarea class="form-control mt-2 count-me" maxlength="300" rows="5"></textarea>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="../../jquery files/jquery-3.7.1.min.js"></script>
+    <script>
+        var maxlength = $(".count-me").attr('maxlength');
+        $(".count-me").on('keyup', function(){
+            var string = $(this).val();
+            var stingLength = string.length;
+            var leftLength = maxlength - stingLength;
+            if(leftLength < 100){
+                $(this).prev(".total-char").removeClass('text-success')
+                $(this).prev(".total-char").addClass('text-danger')
+            }else{
+                $(this).prev(".total-char").removeClass('text-danger')
+                $(this).prev(".total-char").addClass('text-success')
+            }
+            $(this).prev(".total-char").text('Total ' + leftLength + 'characters(s) left');
+        })
+    </script>
+</body>
+</html>

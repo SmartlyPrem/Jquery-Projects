@@ -1,0 +1,59 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Slide up</title>
+    <link rel="stylesheet" href="bootstrap.min.css">
+    <style>
+        .main{
+            width: 100%;
+            height: 100%;
+        }
+        .preview{
+            display: flex;
+            justify-content: center;
+        }
+        .thumbImgChild{
+            width: 80%;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="main">
+            <h2 class="text-center py-3">WsCube Tech Image Gallery</h2>
+            <div class="preview mb-3">
+                <img src="https://picsum.photos/800/400?random=1" width="100%" height="100%" id="thumbImg">
+            </div>
+            <div class="row d-flex mb-4">
+                <div class="col d-flex justify-content-center">
+                    <img src="https://picsum.photos/800/400?random=1" width="100%" class="thumbImgChild">
+                </div>
+                <div class="col d-flex justify-content-center">
+                    <img src="https://picsum.photos/800/400?random=2" width="100%" class="thumbImgChild">
+                </div>
+                <div class="col d-flex justify-content-center">
+                    <img src="https://picsum.photos/800/400?random=3" width="100%" class="thumbImgChild">
+                </div>
+                <div class="col d-flex justify-content-center">
+                    <img src="https://picsum.photos/800/400?random=4" width="100%" class="thumbImgChild">
+                </div>
+                <div class="col d-flex justify-content-center">
+                    <img src="https://picsum.photos/800/400?random=5" width="100%" class="thumbImgChild">
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+<script src="../../jquery files/jquery-3.7.1.min.js"></script>
+    <script>
+        $(".thumbImgChild").mouseenter(
+            function(){
+                var store = $(this).attr('src');
+                $("#thumbImg").attr('src', store);
+            }
+        )
+    </script>
+</html>
