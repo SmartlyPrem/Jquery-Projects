@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Show and Hide Password</title>
+    <link rel="stylesheet" href="../exercise 1/bootstrap.min.css">
+    <style>
+        .box {
+            width: 500px;
+            margin: auto;
+            margin-top: 30px;
+        }
+
+        label,
+        input {
+            display: block;
+        }
+
+        .special {
+            position: absolute;
+            top: -17px;
+            left: 8px;
+            background-color: white;
+            width: 125px;
+            padding: 0px 10px;
+        }
+    </style>
+</head>
+
+<body>
+    <form class="box" action="">
+        <fieldset class="border border-black p-3 position-relative">
+            <legend class="special fs-5">Login Form</legend>
+            <div class="boxi">
+                <label for="">User Name</label>
+                <input type="text">
+            </div>
+            <div class="boxi">
+                <label for="">Password</label>
+                <input type="password" id="password">
+            </div>
+            <div class="boxi pt-2">
+                <input class="d-inline" type="submit">
+                <button type="button" id="toggle" data-toggle="0" class="btn btn-success">Show Password</button>
+            </div>
+        </fieldset>
+    </form>
+</body>
+<script src="../../jquery files/jquery-3.7.1.min.js"></script>
+<script>
+    $("#toggle").on('click',
+        function()  {
+            var state = $(this).data('toggle');
+            console.log(state);
+            if(state == 1){
+                $("#password").attr('type','password');
+                $(this).data('toggle',0);
+                $(this).text('Show Password')
+                .removeClass('btn-danger')
+                .addClass('btn-success')
+            }else{
+                // 0 hidden
+                $("#password").attr('type','text');
+                $(this).data('toggle',1);
+                $(this).text('Hide Password')
+                .removeClass('btn-success')
+                .addClass('btn-danger')
+            }
+        }
+    )
+</script>
+
+</html>

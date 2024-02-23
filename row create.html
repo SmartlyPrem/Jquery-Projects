@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add Remove Row</title>
+    <link rel="stylesheet" href="../exercise 1/bootstrap.min.css">
+    <style>
+        
+    </style>
+</head>
+
+<body>
+    <div class="container mt-5 border">
+        <h4 class="text-center text-danger pt-1" id="arror-msg" style="display: none;">Maximum 10 rows are Allowed</h4>
+        <table class="table items">
+            <thead>
+                <tr>
+                    <td class="required" width="33.33%"><label for="">Title</label></td>
+                    <td class="required" width="33.33%"><label for="">Title</label></td>
+                    <td align="center"> Action</td>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>
+                        <input type="text" class="form-control" autocomplete="off" maxlength="100">
+                    </td>
+                    <td>
+                        <input type="text" class="form-control" autocomplete="off" maxlength="2000">
+                    </td>
+                    <td class="d-flex justify-content-center">
+                        <input type="button" class="btn btn-primary" id="addrow" value="Add Row">
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</body>
+<script src="../../jquery files/jquery-3.7.1.min.js"></script>
+<script>
+    var rows = 1;
+    var tbody = $('tbody');
+    $("#addrow").on('click',
+        function(){
+            if(rows == 10){
+                $("#arror-msg").slideDown(1000);
+                return;
+            }else{
+                var newRow = `<tr>
+                    <td>
+                        <input type="text" class="form-control" autocomplete="off" maxlength="100">
+                    </td>
+                    <td>
+                        <input type="text" class="form-control" autocomplete="off" maxlength="2000">
+                    </td>
+                    <td class="d-flex justify-content-center">
+                        <input type="button" class="btn btn-danger remove" value="Remove">
+                    </td>
+                </tr>`;
+                tbody.append(newRow)
+                rows++;
+            }
+        }
+    );
+    $('tbody').on('click', '.remove',
+        function(){
+            rows--;
+            $("#arror-msg").slideUp(1000);
+            $(this).closest('tr').remove();
+        }
+    )
+</script>
+
+</html>
